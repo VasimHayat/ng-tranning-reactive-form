@@ -1,0 +1,112 @@
+<div class="container pt-5">
+
+
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-8  px-lg-4">
+            <div class="card">
+
+                <div class="d-flex align-items-center p-3 bg-dark text-white bg-purple rounded shadow-sm">
+                    <img class="me-3" src="https://hubworks.com/assets/images/store-apps/hubworks-logo-55x51.png" alt="" width="48" height="38">
+                    <div class="lh-1">
+                        <h1 class="h6 mb-0 text-white lh-1">Signup</h1>
+                    </div>
+                </div>
+
+                <div class="card-body p-lg-5">
+
+                    <form>
+                        <div class="row p-2">
+                            <div class="col">
+                                <label class="mb-2 mt-1">Text1</label>
+                                <input type="text" class="form-control" name="text1" placeholder="text">
+
+
+
+
+                            </div>
+                            <div class="col">
+                                <label class="mb-2 mt-1">Text 2</label>
+                                <input type="text" class="form-control" name="text" placeholder="text">
+                            </div>
+                        </div>
+
+                        <div class="row p-2">
+                            <div class="col">
+                                <label class="mb-2 mt-1">EmailID</label>
+                                <input type="email" class="form-control" name="emailID" placeholder="EmailID">
+                            </div>
+
+                            <div class="col">
+                                <label class="mb-2 mt-1">Select</label>
+                                <select class="form-control" name="country">
+                            <option value="INDIA">A</option>
+                            <option value="USA">B</option>
+                            <option value="UK">C</option>
+                        </select>
+                            </div>
+
+                        </div>
+
+                        <div class="row p-2">
+                            <div class="col">
+                                <label class="mb-2 mt-1">Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="Password">
+                            </div>
+                            <div class="col">
+                                <label class="mb-2 mt-1">Confirm Password</label>
+                                <input type="password" class="form-control" name="confirm_password" placeholder="Password">
+                            </div>
+                        </div>
+
+                        <div class="row p-2">
+                            <div class="col">
+                                <label class="mb-2 mt-1">TEXT Area</label>
+                                <textarea class="form-control" rows="3" name="address"></textarea>
+                            </div>
+
+                            <div class="col">
+                                <label class="mb-2 mt-1">Subscription Type</label>
+                                <div class="form-row align-items-center">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="subscriptionType" id="Subscription" value="v1" checked>
+                                        <label class="form-check-label" for="Subscription">
+                              Monthly
+                            </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="subscriptionType" id="Subscription1" value="v2">
+                                        <label class="form-check-label" for="Subscription1">
+                              Yearly
+                            </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row p-2">
+                            <div class="col">
+                                <div class="form-check mb-3">
+                                    this is test
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-primary" id="regidter" type="submit" name="registerSubmit">Register</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="card-footer px-lg-5 py-lg-4">
+                    <div class="text-sm ">Already have an account? <a class="text-blue">Login</a>.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+providers: [ { provide:NG_VALIDATORS, useExisting:forwardRef(()=>XYZ),multi:true }, ]
