@@ -33,8 +33,9 @@
                         <div class="row p-2">
                             <div class="col">
                                 <label class="mb-2 mt-1">EmailID</label>
-                                <input type="email" class="form-control" name="emailID" placeholder="EmailID" formControlName="emailID">
+                                <input type="email" class="form-control" name="emailID" placeholder="EmailID" formControlName="emailID" appEmailValidator>
 
+                                <span class="form-text text-orange" *ngIf="userForm.controls.emailID.pending">Email Validation in progress</span>
 
 
                                 <app-form-error [hidden]="!isSubmited || userForm.controls.emailID.untouched || userForm.controls.emailID.valid" [isSubmited]="isSubmited" [control]="userForm.controls.emailID"></app-form-error>
@@ -66,25 +67,44 @@
                             {{userForm.errors |json}}
                         </div>
 
+                        <div class="row p-2" formArrayName="addressArray">
+                            <div class="col" *ngFor="let fg of getAddressArray().controls;let i=index;" [formGroup]="fg">
+                                <label class="mb-2 mt-1">Address</label>
+                                <textarea class="form-control" rows="1" name="address" [formContol]="fg.controls.address"></textarea>
+                            </div>
+
+
+                            <!-- <div class="col" *ngFor="let fg of getAddressArray().controls;let i=index;">
+                                <label class="mb-2 mt-1">Address</label>
+                                <textarea class="form-control" rows="1" name="address" [formControlName]="i"></textarea>
+                            </div> -->
+
+                            <div class="col">
+                                <button class="btn btn-primary" (click)="addNewAddress()">Add</button>
+                            </div>
+                        </div>
                         <div class="row p-2">
                             <div class="col">
-                                <label class="mb-2 mt-1">TEXT Area</label>
-                                <textarea class="form-control" rows="3" name="address" formControlName="address"></textarea>
+                                <label class="mb-2 mt-1">Phone Number</label>
+                                <input type="texdt" class="form-control" rows="3" name="phoneNumber" formControlName="phoneNumber" />
+
+
+                                <app-form-error [hidden]="!isSubmited || userForm.controls.phoneNumber.untouched || userForm.controls.phoneNumber.valid" [isSubmited]="isSubmited" [control]="userForm.controls.phoneNumber"></app-form-error>
                             </div>
 
                             <div class="col">
-                                <label class="mb-2 mt-1">Subscription Type</label>
+                                <label class="mb-2 mt-1">Notification Type</label>
                                 <div class="form-row align-items-center">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="subscriptionType" id="Subscription" formControlName="subscriptionType" value="Monthly" checked>
+                                        <input class="form-check-input" type="radio" name="subscriptionType" id="Subscription" formControlName="subscriptionType" (click)="subscriptionAction('Mobile')" value="Mobile" checked>
                                         <label class="form-check-label" for="Subscription">
-                              Monthly
+                                            Mobile
                             </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="subscriptionType" formControlName="subscriptionType" id="Subscription1" value="Yearly">
+                                        <input class="form-check-input" type="radio" name="subscriptionType" formControlName="subscriptionType" (click)="subscriptionAction('Email')" id="Subscription1" value="Email">
                                         <label class="form-check-label" for="Subscription1">
-                              Yearly
+                              Email
                             </label>
                                     </div>
                                 </div>

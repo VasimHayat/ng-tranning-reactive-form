@@ -7,13 +7,15 @@ import { HeaderComponent } from './header/header.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormErrorComponent } from './registration/form-error/form-error.component';
+import { CustomEmailValidatorDirective } from './registration/common/custom-email-validator.directive';
 
 @NgModule({
   declarations: [		
     AppComponent,
     HeaderComponent,
     RegistrationComponent,
-    FormErrorComponent
+    FormErrorComponent,
+    CustomEmailValidatorDirective
    ],
   imports: [
     BrowserModule,

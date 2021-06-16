@@ -1,10 +1,11 @@
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormControl, FormGroup, ValidationErrors } from "@angular/forms";
 
 export class CustomValidators{
 
 
     static emailValidator(c:FormControl){
-        let emailArray = ['vasim@gmail.com']
+        let emailArray = ['vasim@gmail.com'];
+
 
        return new Promise((resolve)=>{ 
            
